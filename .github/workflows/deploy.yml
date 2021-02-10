@@ -24,8 +24,3 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONSDEPLOYKEY }}
           publish_dir: ./build
-      - name: Webhook
-        uses: distributhor/workflow-webhook@v1
-        with:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
-          data: '{"embeds": [{"title": "New Update available","color": 9502467}]}'  
