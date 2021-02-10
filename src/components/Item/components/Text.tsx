@@ -1,3 +1,4 @@
+import styled, { css } from "styled-components"
 import { theme } from "../../../style"
 
 function styleCost(cost?: number){
@@ -8,6 +9,19 @@ function styleCost(cost?: number){
   return cost
 }
 
+const minContent = css`
+  width: min-content;
+`
+
+const Wrapper = styled.div<{noHeader: boolean}>`
+  ${p => p.noHeader ? "" : minContent}
+`
+const H4 = styled.h4`
+  white-space: nowrap;
+`
+const P = styled.p`
+`
+
 export const Text: React.FC<{body?: string, header?: string, cost?: number}> = ({
   body,
   header,
@@ -16,9 +30,9 @@ export const Text: React.FC<{body?: string, header?: string, cost?: number}> = (
 
   
   return (
-    <div>
-      {header && <h4 dangerouslySetInnerHTML={{__html: `${header} [${styleCost(cost)}]`}}/>}
-      {body && <p dangerouslySetInnerHTML={{__html: body}}/>}
-    </div>
+    <Wrapper noHeader={header == undefined}>
+      {header && <H4 dangerouslySetInnerHTML={{__html: `${header} [${styleCost(cost)}]`}}/>}
+      {body && <P dangerouslySetInnerHTML={{__html: body}}/>}
+    </Wrapper>
   )
 }

@@ -13,15 +13,23 @@ import { useCyoa } from './hooks';
 
 
 
-//https://gist.github.com/namelessDeveloper/f728c844cd2009bd87b5edaff8c15be2b
 function App() {
   const config = useCyoa()
   // const config = jsonConfig
   const input = useRef<HTMLInputElement>(null)
   const history = useHistory()
+  
+  /* eslint-disable react-hooks/rules-of-hooks*/
+  if(process.env.NODE_ENV == 'development'){
+    useEffect(() => {
+      if(input.current)
+        //https://gist.github.com/namelessDeveloper/f728c844cd509bd87b5edaff8c15be2b
+        input.current.value = "f728c844cd509bd87b5edaff8c15be2b"
+    }, [input])
+  }
+  /* eslint-enable react-hooks/rules-of-hooks*/
 
   if(config !== null && config.type == "cyoa"){
-    
     return (
       <div className="App">
         {config.sections.map((sect, key) => 
@@ -32,14 +40,6 @@ function App() {
     );
   }
 
-  /* eslint-disable react-hooks/rules-of-hooks*/
-  // if(process.env.NODE_ENV == 'development'){
-  //   useEffect(() => {
-  //     if(input.current)
-  //       input.current.value = "f728c844cd2009bd87b5edaff8c15be2b"
-  //   }, [input])
-  // }
-  /* eslint-enable react-hooks/rules-of-hooks*/
 
 
   return (
