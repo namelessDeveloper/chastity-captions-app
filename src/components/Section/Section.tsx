@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled, { css } from "styled-components"
 import { Direction, Section as SectionType } from "../../types"
 
 import {Item} from '../'
+import { PointContext } from "../../contexts"
 
 function flexDirection(direction?: Direction){
   if(direction){
@@ -20,10 +21,24 @@ interface Props {
   data:SectionType
 }
 
+function usePoints(){
+  const {setAvailable, setTotal, total, available} = useContext(PointContext)
+
+  return function setPoints(cost:number){
+    console.log(cost);
+    if(available != undefined && setAvailable){
+      setAvailable(available + cost)
+    }
+  }
+}
+
+
 export const Section: React.FC<Props> = ({data}) => {
 
+  const setPoints = usePoints()
+
   const handleClick = data.type !== "none" 
-    ? (cost:number) => console.log(cost)
+    ? (cost:number) => setPoints(cost)
     : undefined
 
   if(data.type == "multiple"){

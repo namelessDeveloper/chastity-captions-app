@@ -1,9 +1,14 @@
 import { createContext } from "react";
 
-export const initialState = {
-  points: 0
+
+interface ContextProps {
+  available: number
+  setAvailable: (points: number) => void
+  
+  total: number
+  setTotal: (points: number) => void
 }
 
-const PointContext = createContext(initialState)
+export const PointContext = createContext<Partial<ContextProps>>({})
 
 export const PointProvider = PointContext.Provider

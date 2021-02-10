@@ -3,39 +3,34 @@ import {
   selectionType,
 } from './types';
 
-import {Section} from './components'
 import { useHistory, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import { PointProvider, initialState } from './contexts';
-import { useCyoa } from './hooks';
-
-
-
-
+import { PointProvider } from './contexts';
+import { useCyoa, useDevCyoa } from './hooks';
+import { PointTracker } from './components/PointTracker';
+import { Cyoa } from './containers/Cyoa';
 
 function App() {
   const config = useCyoa()
   // const config = jsonConfig
   const input = useRef<HTMLInputElement>(null)
   const history = useHistory()
-  
-  /* eslint-disable react-hooks/rules-of-hooks*/
-  if(process.env.NODE_ENV == 'development'){
-    useEffect(() => {
-      if(input.current)
-        //https://gist.github.com/namelessDeveloper/f728c844cd509bd87b5edaff8c15be2b
-        input.current.value = "f728c844cd509bd87b5edaff8c15be2b"
-    }, [input])
-  }
-  /* eslint-enable react-hooks/rules-of-hooks*/
+  useDevCyoa(input)
+
+  const [available, setAvailable] = useState(0)
+  const [total, setTotal] = useState(0)
 
   if(config !== null && config.type == "cyoa"){
     return (
       <div className="App">
-        {config.sections.map((sect, key) => 
-        //@ts-ignore
-          <Section data={sect} key={key}/>
-        )}
+        <PointProvider value={{
+          available,
+          setAvailable,
+          total, 
+          setTotal,
+        }}>
+          <Cyoa config={config} />
+        </PointProvider>
       </div>
     );
   }
