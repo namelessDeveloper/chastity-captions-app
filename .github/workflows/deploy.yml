@@ -27,5 +27,5 @@ jobs:
       - name: Webhook
         uses: distributhor/workflow-webhook@v1
         with:
-          url: "http://amberisgreat.ngrok.io/api/test_pedant"
+          url: "https://discord.com/api/webhooks/809150929819533313/qqSs4TUdlzHAyv9qvTRyPhRtySct-KP4t2qrlMgzHo_zKfN0pY3olRMI6c7dY9kOi_ID"
           json: '{"embeds": [{"title": "New Update available","color": 9502467}]}'  
