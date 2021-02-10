@@ -27,5 +27,5 @@ jobs:
       - name: Webhook
         uses: distributhor/workflow-webhook@v1
         with:
-          url: "https://discord.com/api/webhooks/809150929819533313/qqSs4TUdlzHAyv9qvTRyPhRtySct-KP4t2qrlMgzHo_zKfN0pY3olRMI6c7dY9kOi_ID"
-          json: '{"embeds": [{"title": "New Update available","color": 9502467}]}'  
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          data: '{"embeds": [{"title": "New Update available","color": 9502467}]}'  
