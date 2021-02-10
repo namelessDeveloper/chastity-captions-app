@@ -29,8 +29,8 @@ export const Section: React.FC<Props> = ({data}) => {
   if(data.type == "multiple"){
     return (
       <SectionWrapper direction={data.direction}>
-        {data.items.map(item => 
-          <Item data={item} onClick={handleClick}/>
+        {data.items.map((item, key) => 
+          <Item key={key} data={item} onClick={handleClick}/>
         )}
       </SectionWrapper>
     )
@@ -39,8 +39,8 @@ export const Section: React.FC<Props> = ({data}) => {
   if(data.type == "single"){
     return (
       <SectionWrapper direction={data.direction}>
-        {data.items.map(item => 
-          <Item data={item} onClick={handleClick}/>
+        {data.items.map((item, key) => 
+          <Item key={key} data={item} onClick={handleClick}/>
         )}
       </SectionWrapper>
     )
@@ -48,8 +48,8 @@ export const Section: React.FC<Props> = ({data}) => {
 
   return (
     <SectionWrapper direction={data.direction}>
-      {data.items.map(item => 
-        <Item data={item}/>
+      {data.items.map((item, key) => 
+        <Item key={key} data={item}/>
       )}
     </SectionWrapper>
   )

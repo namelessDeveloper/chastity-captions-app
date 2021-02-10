@@ -1,5 +1,6 @@
 {
   "type": "cyoa",
+  "title": "Choose Your Keyholder v5",
   "sections": [
     {
       "metadata": "CYOA Title",

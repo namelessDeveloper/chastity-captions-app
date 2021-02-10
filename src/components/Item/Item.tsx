@@ -41,11 +41,11 @@ export const Item: React.FC<Props> = ({
       affordable={true} // TODO context points
     >
 
-      {data.parts.map(part => {
+      {data.parts.map((part, key) => {
         switch (part.type) {
-          case "image": return <Image src={part.src} width={part.width}/>    
-          case "text": return <Text cost={data.cost} body={part.body} header={part.header}/>
-          case "title": return <Title cost={data.cost} text={part.text} />
+          case "image": return <Image key={key} src={part.src} width={part.width}/>    
+          case "text": return <Text key={key} cost={data.cost} body={part.body} header={part.header}/>
+          case "title": return <Title key={key} cost={data.cost} text={part.text} />
           default: return null
         }
       })}

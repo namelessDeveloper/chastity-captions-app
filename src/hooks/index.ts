@@ -9,12 +9,13 @@ export function useCyoa(){
 
   useEffect(() => {
     const [gistID, filename] = pathname.substr(1).split('/')
-    getConfig(gistID)
+    getConfig(gistID, filename)
       .then(json => {
         if(json){
-          setConfig(JSON.parse(json.files[filename || "cyoa.json"].content))
+          setConfig(json)
+          console.log(`Loaded "${json?.title}"`)
         }
       })
   }, [pathname])
-  return [config]
+  return config
 }

@@ -1,5 +1,6 @@
 export interface CYOA {
   type: "cyoa"
+  title?: string
   sections: Array<Section>
 }
 

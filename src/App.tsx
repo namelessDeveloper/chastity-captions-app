@@ -7,7 +7,7 @@ import {Section} from './components'
 import { useHistory, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { PointProvider, initialState } from './contexts';
-import jsonConfig from "./devConfig.json";
+import { useCyoa } from './hooks';
 
 
 
@@ -15,23 +15,31 @@ import jsonConfig from "./devConfig.json";
 
 //https://gist.github.com/namelessDeveloper/f728c844cd2009bd87b5edaff8c15be2b
 function App() {
-  // const config = useCyoa()
-  const config = jsonConfig
+  const config = useCyoa()
+  // const config = jsonConfig
   const input = useRef<HTMLInputElement>(null)
   const history = useHistory()
 
-  if(config?.type == "cyoa"){
+  if(config !== null && config.type == "cyoa"){
+    
     return (
       <div className="App">
-        {config.sections.map(sect => 
+        {config.sections.map((sect, key) => 
         //@ts-ignore
-          <Section data={sect} />
+          <Section data={sect} key={key}/>
         )}
       </div>
     );
   }
 
-  
+  /* eslint-disable react-hooks/rules-of-hooks*/
+  // if(process.env.NODE_ENV == 'development'){
+  //   useEffect(() => {
+  //     if(input.current)
+  //       input.current.value = "f728c844cd2009bd87b5edaff8c15be2b"
+  //   }, [input])
+  // }
+  /* eslint-enable react-hooks/rules-of-hooks*/
 
 
   return (
