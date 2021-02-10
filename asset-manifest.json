@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/cyoa-viewer/static/js/main.8871ace6.chunk.js",
-    "main.js.map": "/cyoa-viewer/static/js/main.8871ace6.chunk.js.map",
+    "main.js": "/cyoa-viewer/static/js/main.b3a54986.chunk.js",
+    "main.js.map": "/cyoa-viewer/static/js/main.b3a54986.chunk.js.map",
     "runtime-main.js": "/cyoa-viewer/static/js/runtime-main.4b35d194.js",
     "runtime-main.js.map": "/cyoa-viewer/static/js/runtime-main.4b35d194.js.map",
-    "static/js/2.a85b5210.chunk.js": "/cyoa-viewer/static/js/2.a85b5210.chunk.js",
-    "static/js/2.a85b5210.chunk.js.map": "/cyoa-viewer/static/js/2.a85b5210.chunk.js.map",
+    "static/js/2.3b0a857b.chunk.js": "/cyoa-viewer/static/js/2.3b0a857b.chunk.js",
+    "static/js/2.3b0a857b.chunk.js.map": "/cyoa-viewer/static/js/2.3b0a857b.chunk.js.map",
     "index.html": "/cyoa-viewer/index.html",
-    "static/js/2.a85b5210.chunk.js.LICENSE.txt": "/cyoa-viewer/static/js/2.a85b5210.chunk.js.LICENSE.txt"
+    "static/js/2.3b0a857b.chunk.js.LICENSE.txt": "/cyoa-viewer/static/js/2.3b0a857b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4b35d194.js",
-    "static/js/2.a85b5210.chunk.js",
-    "static/js/main.8871ace6.chunk.js"
+    "static/js/2.3b0a857b.chunk.js",
+    "static/js/main.b3a54986.chunk.js"
   ]
 }
