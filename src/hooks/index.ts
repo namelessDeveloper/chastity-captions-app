@@ -13,6 +13,7 @@ export function useCyoa(){
       getConfig(gistID, filename)
         .then(json => {
           if(json){
+            //@ts-ignore
             setConfig(json)
             console.log(`Loaded "${json?.title}"`)
           }
