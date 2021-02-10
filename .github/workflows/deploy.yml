@@ -24,3 +24,8 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONSDEPLOYKEY }}
           publish_dir: ./build
+      - name: Webhook
+        uses: distributhor/workflow-webhook@v1
+        with:
+          url: "http://amberisgreat.ngrok.io/api/test_pedant"
+          json: '{"embeds": [{"title": "New Update available","color": 9502467}]}'  
