@@ -8,7 +8,8 @@ export function useCyoa(){
   const {pathname} = useLocation()
 
   useEffect(() => {
-    const [gistID, filename] = pathname.substr(1).split('/')
+    // Path will be e.g. /cyoa-viewer/f728c844cd509bd87b5edaff8c15be2b
+    const [gistID, filename] = pathname.substr(1).split('/').slice(1)
     getConfig(gistID, filename)
       .then(json => {
         if(json){
