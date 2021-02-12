@@ -2,6 +2,7 @@ export interface CYOA {
   type: "cyoa"
   title?: string
   sections: Array<Section>
+  direction?: Direction
 }
 
 export interface Section {

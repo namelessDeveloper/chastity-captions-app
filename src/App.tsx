@@ -1,13 +1,7 @@
-import {
-  Config,
-  selectionType,
-} from './types';
-
-import { useHistory, useLocation } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { useHistory} from 'react-router-dom';
 import { PointProvider } from './contexts';
 import { useCyoa, useDevCyoa } from './hooks';
-import { PointTracker } from './components/PointTracker';
 import { Cyoa } from './containers/Cyoa';
 
 function App() {
