@@ -22,7 +22,7 @@ interface Props {
 }
 
 function usePoints(){
-  const {setAvailable, setTotal, total, available} = useContext(PointContext)
+  const {setAvailable, available} = useContext(PointContext)
 
   return function setPoints(cost:number){
     console.log(cost);

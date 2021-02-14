@@ -1,4 +1,3 @@
-import { loadavg } from "os"
 import { useState } from "react"
 import { getGist, GithubGist } from "../lib"
 import { useConstructor } from "./useConstructor"

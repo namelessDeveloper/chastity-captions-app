@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { theme } from "../../style"
-import { Direction, Item as ItemInterface } from "../../types"
+import { Item as ItemInterface } from "../../types"
 import { ItemWrapper } from "./styles"
 
 import {

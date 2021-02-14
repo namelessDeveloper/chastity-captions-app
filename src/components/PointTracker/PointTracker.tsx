@@ -1,4 +1,6 @@
+import { useContext } from "react"
 import styled from "styled-components"
+import { PointContext } from "../../containers"
 
 const Tracker = styled.div`
   top: 0;
@@ -17,15 +19,12 @@ function formatAvailable(points: number){
   return points >= 0 ? points : <Negative>{points}</Negative>
 }
 
-interface Props {
-  available: number
-  total: number
-}
 
-export const PointTracker: React.FC<Props> = ({
-  available,
-  total,
+export const PointTracker: React.FC = ({
+
 }) => {
+  const { available = 0 } = useContext(PointContext)
+
   return (
     <Tracker>Available Points: {formatAvailable(available)}</Tracker>
   )
