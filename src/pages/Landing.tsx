@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { useHistory } from "react-router-dom"
-import { useDevCyoa } from "../../hooks"
+import { useDevCyoa } from "../hooks"
 
 export const Landing: React.FC = ({}) => {
   const input = useRef<HTMLInputElement>(null)

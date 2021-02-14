@@ -1,9 +1,9 @@
 import React from "react"
 import { Route, Switch, useLocation, useRouteMatch } from "react-router-dom"
-import { Cyoa, PointContainer, ProfileContainer } from "./containers"
+import { PointContainer, ProfileContainer } from "./containers"
 import { useGist, useCyoa } from "./hooks"
 import { GistFiles } from "./lib"
-import { Landing } from "./pages"
+import { Cyoa, Profile, Landing } from "./pages"
 import { Config } from "./types"
 
 const Routing: React.FC = () =>  (
@@ -65,7 +65,7 @@ const GameRouting: React.FC = () => {
       console.log(cyoa);
       return (
         <ProfileContainer fileList={parseFileList(config.data.files)}>
-          <Cyoa config={cyoa} />
+          <Profile config={cyoa} />
         </ProfileContainer>
       )
     }

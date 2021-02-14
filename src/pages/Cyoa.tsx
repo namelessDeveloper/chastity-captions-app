@@ -3,7 +3,7 @@ import { PointTracker } from "../components/PointTracker"
 import { Config, Direction } from "../types"
 import {Section} from '../components'
 import styled from "styled-components"
-import { PointContext } from "./PointContainer"
+import { PointContext } from "../containers/PointContainer"
 
 interface Props {
   config: Config
@@ -12,19 +12,13 @@ interface Props {
 export const Cyoa: React.FC<Props> = ({
   config,
 }) => {
-  const {
-    available = 0,
-    total = 0,
-    setAvailable,
-    setTotal,
-  } = useContext(PointContext)
+  const { available = 0, total = 0 } = useContext(PointContext)
 
   return (
     <>
       <PointTracker available={available} total={total}/>
       <Layout direction={config?.direction || "column"}>
         {config.sections.map((sect, key) => 
-          //@ts-ignore
           <Section data={sect} key={key}/>
         )}
       </Layout>

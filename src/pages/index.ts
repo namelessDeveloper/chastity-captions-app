@@ -1,1 +1,3 @@
-export * from './Lading'
+export * from './Cyoa'
+export * from './Landing'
+export * from './Profile'
