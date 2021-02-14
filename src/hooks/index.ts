@@ -1,29 +1,15 @@
-import { useState, useEffect } from "react"
-import { useLocation } from "react-router-dom"
-import { getConfig } from "../lib"
+import { useRef } from "react"
 import { Config } from "../types"
 
+
+// TODO clean up this mess
 export function useCyoa(){
-  const [config, setConfig] = useState<null | Config>(null)
-  const {pathname} = useLocation()  
-  useEffect(() => {
-    // Path will be e.g. /cyoa-viewer/f728c844cd509bd87b5edaff8c15be2b
-    const [gistID, filename] = pathname.substr(1).split('/')
-    if(gistID){
-      getConfig(gistID, filename)
-        .then(json => {
-          if(json){
-            //@ts-ignore
-            setConfig(json)
-            console.log(`Loaded "${json?.title}"`)
-          }
-        })
-    } else {
-      setConfig(null)
-    }
-  }, [pathname])
+  const config = useRef<Config>()
+  
   return config
 }
 
 
 export * from './useDevCyoa'
+export * from './useGist'
+export * from './useConstructor'

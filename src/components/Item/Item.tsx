@@ -6,6 +6,7 @@ import { ItemWrapper } from "./styles"
 import {
   Image, Text, Title
 } from './components'
+import { Index } from "./components/Index"
 
 interface Props {
   data:ItemInterface,
@@ -46,6 +47,7 @@ export const Item: React.FC<Props> = ({
           case "image": return <Image key={key} src={part.src} width={part.width}/>    
           case "text": return <Text key={key} cost={data.cost} body={part.body} header={part.header}/>
           case "title": return <Title key={key} cost={data.cost} text={part.text} />
+          case "index": return <Index key={key} />
           default: return null
         }
       })}

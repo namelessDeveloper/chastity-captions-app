@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 import { Direction, Section as SectionType } from "../../types"
 
 import {Item} from '../'
-import { PointContext } from "../../contexts"
+import { PointContext } from "../../containers/PointContainer"
 
 function flexDirection(direction?: Direction){
   if(direction){

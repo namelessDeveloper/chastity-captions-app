@@ -1,9 +1,9 @@
 import React, { useContext } from "react"
-import { PointTracker } from "../../components/PointTracker"
-import { Config, Direction } from "../../types"
-import {Section} from '../../components'
-import { PointContext } from "../../contexts"
+import { PointTracker } from "../components/PointTracker"
+import { Config, Direction } from "../types"
+import {Section} from '../components'
 import styled from "styled-components"
+import { PointContext } from "./PointContainer"
 
 interface Props {
   config: Config

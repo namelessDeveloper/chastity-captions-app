@@ -15,7 +15,7 @@ export interface Section {
 
 export type Direction =| "column" | "row"
 export type selectionType =| "single" | "multiple" | "none"
-type Part =| Image | Text | Title
+type Part =| Image | Text | Title | Index
 
 export interface Item {
   parts: Array<Part>
@@ -50,11 +50,6 @@ interface Title {
   text: string
 }
 
-
-
-
-
-
-
-
-
+interface Index {
+  type: "index"
+}
